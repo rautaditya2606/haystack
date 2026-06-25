@@ -131,7 +131,7 @@
 | haystack/components/rankers/llm\_ranker.py                                          |      107 |        3 |     97% |291, 300, 304 |
 | haystack/components/rankers/lost\_in\_the\_middle.py                                |       43 |        5 |     88% |57, 83, 87, 104, 117 |
 | haystack/components/rankers/meta\_field.py                                          |      118 |        0 |    100% |           |
-| haystack/components/rankers/meta\_field\_grouping\_ranker.py                        |       33 |        0 |    100% |           |
+| haystack/components/rankers/meta\_field\_grouping\_ranker.py                        |       34 |        0 |    100% |           |
 | haystack/components/rankers/sentence\_transformers\_diversity.py                    |      153 |        8 |     95% |254, 269, 400, 421, 433-436 |
 | haystack/components/rankers/sentence\_transformers\_similarity.py                   |       81 |        2 |     98% |  158, 261 |
 | haystack/components/rankers/transformers\_similarity.py                             |      109 |       10 |     91% |143, 148, 154, 175, 261, 272, 275, 296, 308-309 |
@@ -188,7 +188,7 @@
 | haystack/core/pipeline/utils.py                                                     |       69 |        1 |     99% |       201 |
 | haystack/core/serialization.py                                                      |      116 |        5 |     96% |74, 98, 109, 240, 307 |
 | haystack/core/super\_component/\_\_init\_\_.py                                      |        2 |        0 |    100% |           |
-| haystack/core/super\_component/super\_component.py                                  |      196 |        8 |     96% |68, 148, 185, 198, 236, 290, 332, 587 |
+| haystack/core/super\_component/super\_component.py                                  |      196 |        8 |     96% |68, 149, 187, 200, 238, 292, 334, 589 |
 | haystack/core/super\_component/utils.py                                             |       95 |        4 |     96% |77, 112, 124, 181 |
 | haystack/core/type\_utils.py                                                        |      153 |        5 |     97% |51, 58, 121, 157, 249 |
 | haystack/dataclasses/\_\_init\_\_.py                                                |        5 |        0 |    100% |           |
@@ -266,7 +266,7 @@
 | haystack/utils/type\_serialization.py                                               |      112 |       12 |     89% |62, 64, 178-179, 190-193, 199, 215-218 |
 | haystack/utils/url\_validation.py                                                   |        4 |        0 |    100% |           |
 | haystack/version.py                                                                 |        5 |        2 |     60% |      9-10 |
-| **TOTAL**                                                                           | **17984** | **1222** | **93%** |           |
+| **TOTAL**                                                                           | **17985** | **1222** | **93%** |           |
 
 
 ## Setup coverage badge
