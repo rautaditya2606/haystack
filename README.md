@@ -121,7 +121,7 @@
 | haystack/components/preprocessors/hierarchical\_document\_splitter.py               |       59 |        0 |    100% |           |
 | haystack/components/preprocessors/markdown\_header\_splitter.py                     |      162 |        6 |     96% |219-220, 228, 276, 299, 354 |
 | haystack/components/preprocessors/python\_code\_splitter.py                         |      289 |       15 |     95% |150, 162, 190, 197, 231, 280, 308-310, 411-413, 415, 528, 594 |
-| haystack/components/preprocessors/recursive\_splitter.py                            |      231 |       21 |     91% |105-106, 145-148, 190-192, 233-235, 251-253, 273, 356, 395-398 |
+| haystack/components/preprocessors/recursive\_splitter.py                            |      234 |       20 |     91% |105-106, 145-148, 190-192, 233-235, 251-253, 273, 398-401 |
 | haystack/components/preprocessors/sentence\_tokenizer.py                            |       83 |        5 |     94% |62-63, 70-75, 215 |
 | haystack/components/preprocessors/text\_cleaner.py                                  |       29 |        0 |    100% |           |
 | haystack/components/query/\_\_init\_\_.py                                           |        5 |        0 |    100% |           |
@@ -216,7 +216,7 @@
 | haystack/human\_in\_the\_loop/\_\_init\_\_.py                                       |        5 |        0 |    100% |           |
 | haystack/human\_in\_the\_loop/dataclasses.py                                        |       16 |        0 |    100% |           |
 | haystack/human\_in\_the\_loop/policies.py                                           |       17 |        0 |    100% |           |
-| haystack/human\_in\_the\_loop/strategies.py                                         |      157 |       15 |     90% |124-125, 261, 285-303, 328-346, 372, 443, 486, 543 |
+| haystack/human\_in\_the\_loop/strategies.py                                         |      163 |       15 |     91% |124-125, 261, 285-303, 328-346, 372, 458, 516, 573 |
 | haystack/human\_in\_the\_loop/types/\_\_init\_\_.py                                 |        2 |        0 |    100% |           |
 | haystack/human\_in\_the\_loop/types/protocol.py                                     |       25 |        0 |    100% |           |
 | haystack/human\_in\_the\_loop/user\_interfaces.py                                   |       96 |        2 |     98% |   65, 103 |
@@ -255,7 +255,7 @@
 | haystack/utils/deserialization.py                                                   |       18 |        0 |    100% |           |
 | haystack/utils/device.py                                                            |      214 |       13 |     94% |237-239, 364, 447, 468, 484, 512-515, 539-540 |
 | haystack/utils/experimental.py                                                      |       14 |        0 |    100% |           |
-| haystack/utils/filters.py                                                           |      114 |        4 |     96% |19-21, 108 |
+| haystack/utils/filters.py                                                           |      116 |        4 |     97% |19-21, 110 |
 | haystack/utils/hf.py                                                                |      198 |       25 |     87% |99, 233-254, 358, 363-366, 416-419 |
 | haystack/utils/http\_client.py                                                      |       14 |        0 |    100% |           |
 | haystack/utils/jinja2\_chat\_extension.py                                           |      129 |        1 |     99% |       315 |
@@ -266,7 +266,7 @@
 | haystack/utils/type\_serialization.py                                               |      112 |       12 |     89% |62, 64, 178-179, 190-193, 199, 215-218 |
 | haystack/utils/url\_validation.py                                                   |        4 |        0 |    100% |           |
 | haystack/version.py                                                                 |        5 |        2 |     60% |      9-10 |
-| **TOTAL**                                                                           | **17985** | **1222** | **93%** |           |
+| **TOTAL**                                                                           | **17996** | **1221** | **93%** |           |
 
 
 ## Setup coverage badge
