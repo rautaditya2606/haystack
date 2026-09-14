@@ -20,7 +20,7 @@
 | haystack/components/caching/\_\_init\_\_.py                               |        5 |        0 |    100% |           |
 | haystack/components/caching/cache\_checker.py                             |       43 |        0 |    100% |           |
 | haystack/components/converters/\_\_init\_\_.py                            |        5 |        0 |    100% |           |
-| haystack/components/converters/csv.py                                     |       88 |        4 |     95% |161-162, 189-190 |
+| haystack/components/converters/csv.py                                     |       88 |        4 |     95% |162-163, 190-191 |
 | haystack/components/converters/docx.py                                    |      146 |        1 |     99% |       240 |
 | haystack/components/converters/file\_to\_file\_content.py                 |       32 |        0 |    100% |           |
 | haystack/components/converters/html.py                                    |       50 |        0 |    100% |           |
@@ -38,7 +38,7 @@
 | haystack/components/converters/pdfminer.py                                |      105 |        0 |    100% |           |
 | haystack/components/converters/pptx.py                                    |       69 |        2 |     97% |     89-90 |
 | haystack/components/converters/pypdf.py                                   |      103 |        6 |     94% |192, 209-211, 267-271 |
-| haystack/components/converters/txt.py                                     |       34 |        3 |     91% |     87-91 |
+| haystack/components/converters/txt.py                                     |       34 |        3 |     91% |     88-92 |
 | haystack/components/converters/utils.py                                   |       37 |        0 |    100% |           |
 | haystack/components/converters/xlsx.py                                    |      113 |        3 |     97% |83, 183, 185 |
 | haystack/components/embedders/\_\_init\_\_.py                             |        5 |        0 |    100% |           |
@@ -80,9 +80,9 @@
 | haystack/components/generators/chat/types/\_\_init\_\_.py                 |        2 |        0 |    100% |           |
 | haystack/components/generators/chat/types/protocol.py                     |        4 |        0 |    100% |           |
 | haystack/components/generators/openai\_image\_generator.py                |       80 |        0 |    100% |           |
-| haystack/components/generators/utils.py                                   |       93 |        9 |     90% |69, 83, 129, 162-163, 195, 211, 213, 215 |
+| haystack/components/generators/utils.py                                   |       95 |        9 |     91% |69, 83, 129, 162-163, 198, 214, 216, 218 |
 | haystack/components/joiners/\_\_init\_\_.py                               |        5 |        0 |    100% |           |
-| haystack/components/joiners/answer\_joiner.py                             |       57 |        1 |     98% |       159 |
+| haystack/components/joiners/answer\_joiner.py                             |       57 |        1 |     98% |       164 |
 | haystack/components/joiners/branch.py                                     |       20 |        3 |     85% |105, 116-117 |
 | haystack/components/joiners/document\_joiner.py                           |      102 |        0 |    100% |           |
 | haystack/components/joiners/list\_joiner.py                               |       23 |        0 |    100% |           |
@@ -97,9 +97,9 @@
 | haystack/components/preprocessors/hierarchical\_document\_splitter.py     |       60 |        0 |    100% |           |
 | haystack/components/preprocessors/markdown\_header\_splitter.py           |      166 |        6 |     96% |251-252, 266-267, 318, 377 |
 | haystack/components/preprocessors/python\_code\_splitter.py               |      291 |       15 |     95% |151, 163, 191, 198, 232, 281, 309-311, 412-414, 416, 529, 597 |
-| haystack/components/preprocessors/recursive\_splitter.py                  |      239 |       19 |     92% |149-152, 194-196, 237-239, 255-257, 277, 399, 405-408 |
+| haystack/components/preprocessors/recursive\_splitter.py                  |      241 |       19 |     92% |165-168, 210-212, 253-255, 271-273, 293, 415, 421-424 |
 | haystack/components/preprocessors/sentence\_tokenizer.py                  |       83 |        5 |     94% |62-63, 70-75, 215 |
-| haystack/components/preprocessors/text\_cleaner.py                        |       29 |        0 |    100% |           |
+| haystack/components/preprocessors/text\_cleaner.py                        |       31 |        0 |    100% |           |
 | haystack/components/query/\_\_init\_\_.py                                 |        5 |        0 |    100% |           |
 | haystack/components/query/query\_expander.py                              |      137 |       10 |     93% |274-275, 279, 289-290, 297-303, 314-317 |
 | haystack/components/rankers/\_\_init\_\_.py                               |        5 |        0 |    100% |           |
@@ -150,7 +150,7 @@
 | haystack/core/serialization.py                                            |      129 |        6 |     95% |76, 100, 247, 334, 350-351 |
 | haystack/core/serialization\_security.py                                  |      135 |        0 |    100% |           |
 | haystack/core/super\_component/\_\_init\_\_.py                            |        2 |        0 |    100% |           |
-| haystack/core/super\_component/super\_component.py                        |      194 |        7 |     96% |67, 196, 209, 247, 301, 343, 596 |
+| haystack/core/super\_component/super\_component.py                        |      195 |        7 |     96% |67, 199, 212, 250, 304, 346, 599 |
 | haystack/core/super\_component/utils.py                                   |       95 |        4 |     96% |77, 112, 124, 181 |
 | haystack/core/type\_utils.py                                              |      170 |        6 |     96% |94, 96, 101, 166, 208, 300 |
 | haystack/dataclasses/\_\_init\_\_.py                                      |        5 |        0 |    100% |           |
@@ -266,7 +266,7 @@
 | haystack/utils/type\_serialization.py                                     |      144 |        6 |     96% |106, 108, 260-261, 269, 285 |
 | haystack/utils/url\_validation.py                                         |        4 |        0 |    100% |           |
 | haystack/version.py                                                       |        5 |        2 |     60% |      9-10 |
-| **TOTAL**                                                                 | **17231** |  **751** | **96%** |           |
+| **TOTAL**                                                                 | **17238** |  **751** | **96%** |           |
 
 
 ## Setup coverage badge
