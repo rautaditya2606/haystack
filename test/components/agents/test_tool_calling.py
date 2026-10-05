@@ -702,6 +702,20 @@ class TestRunToolErrorHandling:
         chat_message = _build_tool_result_message(tool_result, tool_call, weather_tool, raise_on_failure=False)
         assert chat_message.tool_call_results[0].result == '{"weather": "sunny", "temp": "25"}'
 
+    def test_outputs_to_string_with_multiple_outputs_containing_reserved_keys(self):
+        search_tool = Tool(
+            name="search_tool",
+            description="Provides search information.",
+            parameters=weather_parameters,
+            function=weather_function,
+            outputs_to_string={"source": {"source": "source"}, "temp": {"source": "temperature"}},
+        )
+        tool_call = ToolCall(tool_name="search_tool", arguments={"location": "Berlin"})
+
+        tool_result = {"source": "https://example.com", "temperature": 25, "unit": "celsius"}
+        chat_message = _build_tool_result_message(tool_result, tool_call, search_tool, raise_on_failure=False)
+        assert chat_message.tool_call_results[0].result == '{"source": "https://example.com", "temp": "25"}'
+
     def test_output_handler_failure_falls_back_to_string(self):
         weather_tool = Tool(
             name="weather_tool",

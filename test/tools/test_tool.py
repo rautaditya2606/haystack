@@ -132,6 +132,46 @@ class TestTool:
                 outputs_to_string={"documents": ["some_value"]},
             )
 
+    def test_init_outputs_to_string_with_reserved_keys_multi_output(self):
+        tool = Tool(
+            name="search",
+            description="Search tool",
+            parameters={"type": "object", "properties": {"city": {"type": "string"}}},
+            function=get_weather_report,
+            outputs_to_string={
+                "source": {"source": "source_field"},
+                "handler": {"source": "handler_field"},
+                "raw_result": {"source": "raw_field"},
+            },
+        )
+        assert tool.outputs_to_string == {
+            "source": {"source": "source_field"},
+            "handler": {"source": "handler_field"},
+            "raw_result": {"source": "raw_field"},
+        }
+
+    def test_init_invalid_outputs_to_string_mixed_config_raises(self):
+        with pytest.raises(
+            TypeError, match="outputs_to_string configuration for key 'bad_output' must be a dictionary"
+        ):
+            Tool(
+                name="irrelevant",
+                description="irrelevant",
+                parameters={"type": "object", "properties": {"city": {"type": "string"}}},
+                function=get_weather_report,
+                outputs_to_string={"documents": {"source": "docs"}, "bad_output": "not_a_dict"},
+            )
+
+    def test_init_outputs_to_string_empty_dict(self):
+        tool = Tool(
+            name="irrelevant",
+            description="irrelevant",
+            parameters={"type": "object", "properties": {"city": {"type": "string"}}},
+            function=get_weather_report,
+            outputs_to_string={},
+        )
+        assert tool.outputs_to_string == {}
+
     def test_tool_spec(self):
         tool = Tool(
             name="weather", description="Get weather report", parameters=parameters, function=get_weather_report
@@ -231,6 +271,21 @@ class TestTool:
             "temp": {"source": "temperature", "handler": "test_tool.format_string"},
         }
 
+        config_with_reserved = {
+            "source": {"source": "report", "handler": format_string},
+            "handler": {"source": "temperature", "handler": format_string},
+            "raw_result": {"source": "raw"},
+        }
+        serialized_reserved = _serialize_outputs_to_string(config_with_reserved)
+        assert isinstance(serialized_reserved["source"]["handler"], str)
+        assert isinstance(serialized_reserved["handler"]["handler"], str)
+        assert serialized_reserved == {
+            "source": {"source": "report", "handler": "test_tool.format_string"},
+            "handler": {"source": "temperature", "handler": "test_tool.format_string"},
+            "raw_result": {"source": "raw"},
+        }
+        assert _serialize_outputs_to_string({}) == {}
+
     def test_deserialize_outputs_to_string(self):
         serialized = {"handler": "test_tool.format_string", "source": "result", "raw_result": False}
         deserialized = _deserialize_outputs_to_string(serialized)
@@ -253,6 +308,21 @@ class TestTool:
             "report": {"source": "report", "handler": format_string},
             "temp": {"source": "temperature", "handler": format_string},
         }
+
+        serialized_reserved = {
+            "source": {"source": "report", "handler": "test_tool.format_string"},
+            "handler": {"source": "temperature", "handler": "test_tool.format_string"},
+            "raw_result": {"source": "raw"},
+        }
+        deserialized_reserved = _deserialize_outputs_to_string(serialized_reserved)
+        assert callable(deserialized_reserved["source"]["handler"])
+        assert callable(deserialized_reserved["handler"]["handler"])
+        assert deserialized_reserved == {
+            "source": {"source": "report", "handler": format_string},
+            "handler": {"source": "temperature", "handler": format_string},
+            "raw_result": {"source": "raw"},
+        }
+        assert _deserialize_outputs_to_string({}) == {}
 
     def test_serialize_outputs_to_state(self):
         config: dict[str, dict[str, Any]] = {

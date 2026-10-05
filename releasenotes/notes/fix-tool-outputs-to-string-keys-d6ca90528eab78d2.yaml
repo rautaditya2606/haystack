@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Fix ``Tool``, ``ComponentTool``, ``PipelineTool``, and ``AgentTool`` handling of ``outputs_to_string`` when using the multiple-output format with output keys named ``source``, ``handler``, or ``raw_result``. Previously, top-level key heuristics mistakenly treated these as single-output configurations, causing validation, execution, and serialization errors.
